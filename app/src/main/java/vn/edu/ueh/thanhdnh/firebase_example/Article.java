@@ -5,6 +5,7 @@ public class Article {
   private String title;
   private String content;
   private String imageUrl;
+  private long views;
 
   // BẮT BUỘC: Firestore cần constructor rỗng để dùng toObject()
   public Article() {
@@ -15,6 +16,7 @@ public class Article {
     this.title = title;
     this.content = content;
     this.imageUrl = imageUrl;
+    this.views = 0; // bài mới bắt đầu với 0 lượt xem
   }
 
   public String getId() {
@@ -49,6 +51,14 @@ public class Article {
     this.imageUrl = imageUrl;
   }
 
+  public long getViews() {
+    return views;
+  }
+
+  public void setViews(long views) {
+    this.views = views;
+  }
+
   @Override
   public String toString() {
     return "Article{" +
@@ -56,6 +66,7 @@ public class Article {
             ", title='" + title + '\'' +
             ", content='" + content + '\'' +
             ", imageUrl='" + imageUrl + '\'' +
+            ", views=" + views +
             '}';
   }
 }

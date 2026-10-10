@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ArticleViewHolder extends RecyclerView.ViewHolder {
   private ImageView imgArticle;
-  private TextView txtId, txtTitle, txtContent;
+  private TextView txtId, txtTitle, txtContent, txtViews;
   private ArticleAdapter adapter;
 
   public ArticleViewHolder(@NonNull View itemView, ArticleAdapter adapter) {
@@ -18,6 +18,7 @@ public class ArticleViewHolder extends RecyclerView.ViewHolder {
     txtId = itemView.findViewById(R.id.txt_id);
     txtTitle = itemView.findViewById(R.id.txt_title);
     txtContent = itemView.findViewById(R.id.txt_content);
+    txtViews = itemView.findViewById(R.id.txt_views);
     this.adapter = adapter;
   }
 
@@ -35,5 +36,9 @@ public class ArticleViewHolder extends RecyclerView.ViewHolder {
 
   public TextView getTxtContent() {
     return txtContent;
+  }
+
+  public TextView getTxtViews() {
+    return txtViews;
   }
 }
